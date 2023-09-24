@@ -17,8 +17,6 @@ spec:
         repoURL: https://github.com/M0NsTeRRR/test_argocd.git
         targetRevision: main
         path: argocd/{{appName}}
-        plugin:
-          name: kustomize-enable-helm
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
