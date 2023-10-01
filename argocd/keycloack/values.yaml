@@ -1,0 +1,21 @@
+auth:
+  adminUser: "<path:secret/data/homelab/prod/argocd/keycloak#ADMIN_USER>"
+  adminPassword: "<path:secret/data/homelab/prod/argocd/keycloak#ADMIN_PASSWORD>"
+
+postgresql:
+  enabled: true
+  auth:
+    username: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
+    password: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_PASSWORD>"
+    database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
+
+production: true
+proxy: edge
+
+ingress:
+  enabled: true
+  ingressClassName: "traefik-external"
+  hostname: sso.unicornafk.fr
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt"
+  tls: true

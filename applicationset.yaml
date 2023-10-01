@@ -6,8 +6,8 @@ spec:
   generators:
   - list:
       elements:
-      - appName: stakater
-        namespace: stakater
+      - appName: keycloak
+        namespace: keycloak
   template:
     metadata:
       name: '{{appName}}'
