@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: keycloak
 
 helmCharts:
-- name: bitnami/keycloak
+- name: keycloak
   releaseName: keycloak
   namespace: keycloak
   repo: https://charts.bitnami.com/bitnami
