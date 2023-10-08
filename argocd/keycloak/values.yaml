@@ -5,6 +5,7 @@ auth:
 postgresql:
   enabled: true
   auth:
+    postgresPassword: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_ADMIN_PASSWORD>"
     username: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
     password: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_PASSWORD>"
     database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
@@ -18,4 +19,6 @@ ingress:
   hostname: sso.unicornafk.fr
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    traefik.ingress.kubernetes.io/router.tls: "true"
   tls: true
