@@ -9,3 +9,6 @@ helmCharts:
   repo: https://charts.bitnami.com/bitnami
   version: 17.0.0
   valuesFile: values.yaml
+
+resources:
+- manifests/ingress-internal.yaml
