@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: postgres
 
 helmCharts:
-- name: postgres-operator-charts
+- name: postgres-operator
   releaseName: postgres-operator
   namespace: postgres
   repo: https://opensource.zalando.com/postgres-operator/charts/postgres-operator
