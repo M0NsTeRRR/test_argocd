@@ -12,3 +12,4 @@ helmCharts:
 
 resources:
 - manifests/ingress-internal.yaml
+- manifests/postgres.yaml
