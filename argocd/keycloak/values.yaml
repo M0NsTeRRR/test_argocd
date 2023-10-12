@@ -5,15 +5,12 @@ auth:
   adminPassword: "<path:secret/data/homelab/prod/argocd/keycloak#ADMIN_PASSWORD>"
 
 postgresql:
-  enabled: false
-
-externalDatabase:
-  host: "pgsql-homelab-keycloak-cluster"
-  port: 5432
-  user: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
-  database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
-  existingSecret: "postgres.homelab-keycloak-cluster.credentials"
-  existingSecretPasswordKey: "data.password"
+  enabled: true
+  auth:
+    postgresPassword: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_ADMIN_PASSWORD>"
+    username: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
+    password: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_PASSWORD>"
+    database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
 
 production: true
 proxy: edge
