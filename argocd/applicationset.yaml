@@ -6,6 +6,8 @@ spec:
   generators:
   - list:
       elements:
+      - appName: postgres-operator
+        namespace: postgres-operator
       - appName: keycloak
         namespace: keycloak
   template:
