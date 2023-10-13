@@ -8,9 +8,9 @@ postgresql:
   enabled: true
   auth:
     postgresPassword: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_ADMIN_PASSWORD>"
-#    username: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
+    username: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_USERNAME>"
     password: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_PASSWORD>"
-#    database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
+    database: "<path:secret/data/homelab/prod/argocd/keycloak#POSTGRESQL_DATABASE>"
 
 production: true
 proxy: edge
@@ -18,7 +18,7 @@ proxy: edge
 ingress:
   enabled: true
   ingressClassName: "traefik-external"
-  hostname: sso.unicornafk.fr
+  hostname: sso.adminafk.fr
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
