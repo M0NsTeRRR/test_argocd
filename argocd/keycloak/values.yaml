@@ -17,7 +17,7 @@ proxy: edge
 
 ingress:
   enabled: true
-  ingressClassName: "traefik-external"
+  ingressClassName: "ingress-external"
   hostname: sso.adminafk.fr
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt"

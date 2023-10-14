@@ -26,4 +26,4 @@ spec:
     - hosts:
         - sso.unicornafk.fr
       secretName: sso.unicornafk.fr-internal-tls
-  ingressClassName: "traefik-internal"
+  ingressClassName: "ingress-internal"
