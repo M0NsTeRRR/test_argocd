@@ -6,8 +6,8 @@ spec:
   generators:
   - list:
       elements:
-        - appName: test
-          namespace: test
+        - appName: external-secrets
+          namespace: external-secrets
         - appName: keycloak
           namespace: keycloak
   template:
