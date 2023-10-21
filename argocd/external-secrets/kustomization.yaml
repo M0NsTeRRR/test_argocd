@@ -3,8 +3,9 @@ kind: Kustomization
 namespace: external-secrets
 
 helmCharts:
-- name: external-secretsf
-  releaseName: external-secretsf
+- name: external-secrets
+  releaseName: external-secrets
   namespace: external-secrets
   repo: https://charts.external-secrets.io
   version: 0.9.7
+  valuesFile: values.yaml
