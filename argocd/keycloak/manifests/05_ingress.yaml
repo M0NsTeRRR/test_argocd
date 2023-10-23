@@ -2,15 +2,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: keycloak-internal
+  name: keycloak-external
   namespace: keycloak
   annotations:
-    cert-manager.io/cluster-issuer: "vault"
-    cert-manager.io/private-key-algorithm: "RSA"
-    cert-manager.io/private-key-size: "4096"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-    - host: sso.unicornafk.fr
+    - host: sso.adminafk.fr
       http:
         paths:
           - path: /
@@ -22,6 +20,6 @@ spec:
                   name: http
   tls:
     - hosts:
-        - sso.unicornafk.fr
-      secretName: sso.unicornafk.fr-internal-tls
-  ingressClassName: "ingress-internal"
+        - sso.adminafk.fr
+      secretName: sso.adminafk.fr-tls
+  ingressClassName: ingress-external
