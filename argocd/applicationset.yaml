@@ -10,6 +10,8 @@ spec:
           namespace: external-secrets
         - appName: keycloak
           namespace: keycloak
+        - appName: keycloak-operator
+          namespace: keycloak-operator
   template:
     metadata:
       name: '{{appName}}'
