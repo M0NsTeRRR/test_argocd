@@ -37,8 +37,6 @@ spec:
         app.kubernetes.io/name: keycloak
         app.kubernetes.io/instance: keycloak
       annotations:
-        vault.hashicorp.com/tls-secret: "homelab-ca"
-        vault.hashicorp.com/ca-cert: "/vault/tls/ca.crt"
         vault.hashicorp.com/agent-inject: 'true'
         vault.hashicorp.com/role: 'keycloak'
         vault.hashicorp.com/agent-inject-secret-config: 'secret/data/homelab/prod/keycloak'
