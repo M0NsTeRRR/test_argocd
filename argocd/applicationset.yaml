@@ -6,8 +6,8 @@ spec:
   generators:
   - list:
       elements:
-        - appName: minio
-          namespace: minio
+        - appName: minio-operator
+          namespace: minio-operator
   template:
     metadata:
       name: '{{appName}}'
