@@ -6,8 +6,8 @@ spec:
   generators:
   - list:
       elements:
-        - appName: keycloak
-          namespace: keycloak
+        - appName: minio
+          namespace: minio
   template:
     metadata:
       name: '{{appName}}'
