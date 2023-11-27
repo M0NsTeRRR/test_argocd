@@ -26,6 +26,9 @@ monitoring:
     grafanaAgent:
       installOperator: false
 
+gateway:
+  enabled: false
+
 ingress:
   enabled: true
   annotations:
