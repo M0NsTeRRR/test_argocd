@@ -8,7 +8,7 @@ resources:
   - manifests/03_middleware.yaml
 
 helmCharts:
-- name: loki
+- name: loki-distributed
   releaseName: loki
   namespace: loki
   repo: https://grafana.github.io/helm-charts
