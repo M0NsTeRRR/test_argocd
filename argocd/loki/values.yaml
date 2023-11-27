@@ -26,19 +26,19 @@ monitoring:
     grafanaAgent:
       installOperator: false
 
-gateway:
-  ingress:
-    enabled: true
-    annotations:
-      cert-manager.io/cluster-issuer: "{{ argocd_ingress_cluster_issuer }}"
-      cert-manager.io/private-key-algorithm: "RSA"
-      cert-manager.io/private-key-size: "4096"
-    hosts:
-      - host: loki.unicornafk.fr
-        paths:
-          - path: /
-    ingressClassName: "ingress-internal"
-    tls:
-      - secretName: loki.unicornafk.fr
-        hosts:
-          - loki.unicornafk.fr
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: "vault"
+    cert-manager.io/private-key-algorithm: "RSA"
+    cert-manager.io/private-key-size: "4096"
+    traefik.ingress.kubernetes.io/router.middlewares: loki-basic-auth@kubernetescrd
+  hosts:
+    - host: loki.unicornafk.fr
+      paths:
+        - path: /
+  ingressClassName: "ingress-internal"
+  tls:
+    - secretName: loki.unicornafk.fr
+      hosts:
+        - loki.unicornafk.fr

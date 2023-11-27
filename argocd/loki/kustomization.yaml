@@ -4,11 +4,13 @@ namespace: loki
 
 resources:
   - manifests/01_bucket.yaml
+  - manifests/02_external_secret.yaml
+  - manifests/03_middleware.yaml
 
 helmCharts:
 - name: loki
   releaseName: loki
   namespace: loki
   repo: https://grafana.github.io/helm-charts
-  version: 0.74.0
+  version: 0.76.1
   valuesFile: values.yaml
