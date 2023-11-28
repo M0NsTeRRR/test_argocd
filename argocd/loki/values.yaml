@@ -37,9 +37,7 @@ ingress:
     cert-manager.io/private-key-size: "4096"
     traefik.ingress.kubernetes.io/router.middlewares: loki-basic-auth@kubernetescrd
   hosts:
-    - host: loki.unicornafk.fr
-      paths:
-        - path: /
+    - loki.unicornafk.fr
   ingressClassName: "ingress-internal"
   tls:
     - secretName: loki.unicornafk.fr
