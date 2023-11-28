@@ -7,7 +7,7 @@ querier:
 
 loki:
   config: |
-    storage_config:
+    storageConfig:
       bucketNames:
         chunks: loki/chunks
         ruler: loki/ruler
