@@ -7,25 +7,13 @@ global:
 
 mimir:
   structuredConfig:
-    alertmanager_storage:
-      s3:
-        bucket_name: ${BUCKET_NAME}/alertmanager
-        access_key_id: ${AWS_ACCESS_KEY_ID}
-        endpoint: ${BUCKET_HOST}
-        secret_access_key: ${AWS_SECRET_ACCESS_KEY}
-    blocks_storage:
-      backend: s3
-      s3:
-        bucket_name: ${BUCKET_NAME}/blocks
-        access_key_id: ${AWS_ACCESS_KEY_ID}
-        endpoint: ${BUCKET_HOST}
-        secret_access_key: ${AWS_SECRET_ACCESS_KEY}
-    ruler_storage:
-      s3:
-        bucket_name: ${BUCKET_NAME}/ruler
-        access_key_id: ${AWS_ACCESS_KEY_ID}
-        endpoint: ${BUCKET_HOST}
-        secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+    common:
+      storage:
+        s3:
+          bucket_name: ${BUCKET_NAME}
+          access_key_id: ${AWS_ACCESS_KEY_ID}
+          endpoint: ${BUCKET_HOST}
+          secret_access_key: ${AWS_SECRET_ACCESS_KEY}
 
 alertmanager:
   annotations:
