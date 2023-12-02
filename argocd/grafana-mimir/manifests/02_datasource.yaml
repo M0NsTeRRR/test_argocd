@@ -11,7 +11,7 @@ data:
     - name: Mimir
       type: prometheus
       access: proxy
-      url: http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local
+      url: http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/prometheus
       jsonData:
         httpMethod: POST
         prometheusType: Mimir
