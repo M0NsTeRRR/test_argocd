@@ -43,6 +43,7 @@ gateway:
       - host: loki.unicornafk.fr
         paths:
           - path: /
+            pathType: Prefix
     ingressClassName: "ingress-internal"
     tls:
       - secretName: loki.unicornafk.fr
