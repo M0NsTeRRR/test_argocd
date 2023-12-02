@@ -8,6 +8,8 @@ spec:
       elements:
         - appName: loki
           namespace: loki
+        - appName: grafana
+          namespace: grafana
   template:
     metadata:
       name: '{{appName}}'

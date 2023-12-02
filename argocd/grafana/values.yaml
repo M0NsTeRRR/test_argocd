@@ -1,0 +1,24 @@
+admin:
+  existingSecret: ""
+  userKey: ADMIN_USER
+  passwordKey: ADMIN_PASSWORD
+
+sidecar:
+  dashboards:
+    enabled: true
+  datasources:
+    enabled: true
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: "vault"
+    cert-manager.io/private-key-algorithm: "RSA"
+    cert-manager.io/private-key-size: "4096"
+  hosts:
+    - monitoring.unicornafk.fr
+  ingressClassName: "ingress-internal"
+  tls:
+    - secretName: monitoring.unicornafk.fr
+      hosts:
+        - monitoring.unicornafk.fr
