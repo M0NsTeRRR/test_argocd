@@ -6,6 +6,8 @@ spec:
   generators:
   - list:
       elements:
+        - appName: grafana-mimir
+          namespace: grafana-mimir
         - appName: loki
           namespace: loki
         - appName: grafana
