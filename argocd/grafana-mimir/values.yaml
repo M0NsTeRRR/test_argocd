@@ -14,6 +14,7 @@ mimir:
           access_key_id: ${AWS_ACCESS_KEY_ID}
           endpoint: ${BUCKET_HOST}
           secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+          insecure: "true"
 
 alertmanager:
   annotations:

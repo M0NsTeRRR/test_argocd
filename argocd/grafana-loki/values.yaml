@@ -18,11 +18,9 @@ loki:
     type: s3
     s3:
       endpoint: ${BUCKET_HOST}
-      region: eu-west-1
       accessKeyId: ${AWS_ACCESS_KEY_ID}
       secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-      s3ForcePathStyle: false
-      insecure: false
+      insecure: true
 
 monitoring:
   selfMonitoring:
