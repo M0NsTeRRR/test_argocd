@@ -1,5 +1,5 @@
 admin:
-  existingSecret: ""
+  existingSecret: grafana-vault
   userKey: ADMIN_USER
   passwordKey: ADMIN_PASSWORD
 
