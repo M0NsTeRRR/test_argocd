@@ -4,6 +4,7 @@ namespace: loki
 
 resources:
   - manifests/01_bucket.yaml
+  - manifests/02_datasource.yaml
 
 helmCharts:
 - name: loki-distributed

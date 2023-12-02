@@ -9,17 +9,6 @@ sidecar:
   datasources:
     enabled: true
 
-datasources:
-  datasources.yaml:
-    apiVersion: 1
-    datasources:
-    - name: Loki
-      type: loki
-      url: http://loki-loki-distributed-gateway.loki.svc.cluster.local
-      access: proxy
-      jsonData:
-        maxLines: 1000
-
 ingress:
   enabled: true
   annotations:
