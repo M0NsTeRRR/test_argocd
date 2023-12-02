@@ -41,6 +41,8 @@ gateway:
       cert-manager.io/private-key-size: "4096"
     hosts:
       - host: loki.unicornafk.fr
+        paths:
+          - path: /
     ingressClassName: "ingress-internal"
     tls:
       - secretName: loki.unicornafk.fr
