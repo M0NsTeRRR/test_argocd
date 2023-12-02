@@ -6,9 +6,9 @@ resources:
   - manifests/01_bucket.yaml
 
 helmCharts:
-- name: loki-distributed
+- name: loki
   releaseName: loki
   namespace: loki
   repo: https://grafana.github.io/helm-charts
-  version: 0.76.1
+  version: 5.40.0
   valuesFile: values.yaml

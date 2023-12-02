@@ -1,12 +1,3 @@
-querier:
-  extraArgs:
-    - -config.expand-env=true
-  extraEnvFrom:
-    - secretRef:
-        name: loki-bucket
-    - configMapRef:
-        name: loki-bucket
-
 loki:
   annotations:
     reloader.stakater.com/auto: "true"
@@ -23,14 +14,19 @@ loki:
       secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
       s3ForcePathStyle: false
       insecure: false
+  querier:
+    extraArgs:
+      - -config.expand-env=true
+    extraEnvFrom:
+      - secretRef:
+          name: loki-bucket
+      - configMapRef:
+          name: loki-bucket
 
 monitoring:
   selfMonitoring:
     grafanaAgent:
       installOperator: false
-
-serviceMonitor:
-  enabled: true
 
 gateway:
   enabled: false
