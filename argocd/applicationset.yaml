@@ -8,8 +8,10 @@ spec:
       elements:
         - appName: grafana-mimir
           namespace: grafana-mimir
-        - appName: loki
-          namespace: loki
+        - appName: grafana-loki
+          namespace: grafana-loki
+        - appName: grafana-agent
+          namespace: grafana-agent
         - appName: grafana
           namespace: grafana
   template:

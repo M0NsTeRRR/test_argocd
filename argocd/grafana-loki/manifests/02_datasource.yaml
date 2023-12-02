@@ -10,7 +10,7 @@ data:
     datasources:
     - name: Loki
       type: loki
-      url: http://loki-loki-distributed-gateway.loki.svc.cluster.local
+      url: http://grafana-loki-loki-distributed-gateway.grafana-loki.svc.cluster.local
       access: proxy
       jsonData:
         maxLines: 1000
