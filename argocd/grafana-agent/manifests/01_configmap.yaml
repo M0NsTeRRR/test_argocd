@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-agent-config
+data:
+  config: |
+    logging {
+      level  = "info"
+      format = "logfmt"
+    }
+
+    // remote write
+    prometheus.remote_write "default" {
+      endpoint {
+        url = "http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/prometheus/api/v1/write"
+      }
+    }
+
+    loki.write "local" {
+      endpoint {
+        url = "http://grafana-loki-loki-distributed-gateway.grafana-loki.svc.cluster.local/loki/api/v1/push"
+      }
+    }
+
+    // discovery
+    prometheus.exporter.agent "agent" {}
+
+    prometheus.exporter.unix "server" { }
+
+    prometheus.exporter.cadvisor "container" {}
+
+    discovery.kubernetes "nodes" {
+      role = "node"
+    }
+
+    discovery.kubernetes "pods" {
+      role = "pod"
+    }
+
+    // prometheus scrape
+    prometheus.scrape "agent" {
+      targets    = prometheus.exporter.agent.agent.targets
+      forward_to = [prometheus.remote_write.default.receiver]
+    }
+
+    prometheus.scrape "server" {
+      targets    = prometheus.exporter.unix.server.targets
+      forward_to = [prometheus.remote_write.default.receiver]
+    }
+
+    prometheus.scrape "kubelet" {
+      scheme = "https"
+      tls_config {
+          server_name = "kubernetes"
+          ca_file = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+          insecure_skip_verify = false
+      }
+      bearer_token_file = "/var/run/secrets/kubernetes.io/serviceaccount/token"
+      targets = discovery.relabel.metrics_kubelet.output
+      scrape_interval = "60s"
+      forward_to = [prometheus.remote_write.default.receiver]
+    }
+
+    prometheus.scrape "cadvisor" {
+      targets    = prometheus.exporter.cadvisor.container.targets
+      forward_to = [ prometheus.remote_write.default.receiver ]
+    }
+
+    prometheus.operator.servicemonitors "servicemonitors" {
+      forward_to = [prometheus.remote_write.default.receiver]
+    }
+
+    // loki source
+    loki.source.journal "read"  {
+      forward_to    = [loki.write.local.receiver]
+      relabel_rules = loki.relabel.journal.rules
+    }
+
+    loki.source.kubernetes "pods" {
+      targets    = discovery.kubernetes.pods.targets
+      forward_to = [loki.write.local.receiver]
+    }
+
+    loki.source.kubernetes_events "events" {
+      log_format = "json"
+      forward_to = [loki.write.local.receiver]
+    }
