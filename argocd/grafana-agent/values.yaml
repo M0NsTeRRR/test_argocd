@@ -1,3 +1,6 @@
+controller:
+  extraAnnotations:
+    reloader.stakater.com/auto: "true"
 agent:
   enableReporting: false
   mode: 'flow'
@@ -9,3 +12,5 @@ agent:
     enabled: true
 crds:
   create: false
+configReloader:
+  enabled: false

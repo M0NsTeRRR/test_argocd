@@ -1,3 +1,6 @@
+annotations:
+  reloader.stakater.com/auto: "true"
+
 admin:
   existingSecret: grafana-vault
   userKey: ADMIN_USER
