@@ -56,7 +56,7 @@ data:
           insecure_skip_verify = false
       }
       bearer_token_file = "/var/run/secrets/kubernetes.io/serviceaccount/token"
-      targets = discovery.relabel.metrics_kubelet.output
+      targets = discovery.kubernetes.nodes.targets
       scrape_interval = "60s"
       forward_to = [prometheus.remote_write.default.receiver]
     }
@@ -73,7 +73,6 @@ data:
     // loki source
     loki.source.journal "read"  {
       forward_to    = [loki.write.local.receiver]
-      relabel_rules = loki.relabel.journal.rules
     }
 
     loki.source.kubernetes "pods" {
