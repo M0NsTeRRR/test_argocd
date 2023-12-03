@@ -30,6 +30,8 @@ minio:
 metaMonitoring:
   dashboards:
     enabled: true
+    annotations:
+      grafana_dashboard_folder: "/tmp/dashboards/mimir"
   serviceMonitor:
     enabled: true
 
