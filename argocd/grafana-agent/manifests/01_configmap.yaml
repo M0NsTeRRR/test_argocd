@@ -12,7 +12,7 @@ data:
     // remote write
     prometheus.remote_write "default" {
       endpoint {
-        url = "http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/prometheus/api/v1/write"
+        url = "http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/api/v1/push"
       }
     }
 
