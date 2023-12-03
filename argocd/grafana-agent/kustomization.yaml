@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: grafana-agent
 
 resources:
+  - manifests/01_configmap.yaml
   - manifests/service-monitors/cadvisor.yaml
   - manifests/service-monitors/kubelet.yaml
 
