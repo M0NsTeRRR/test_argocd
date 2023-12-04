@@ -6,6 +6,8 @@ spec:
   generators:
   - list:
       elements:
+        - appName: kube-prometheus-stack
+          namespace: kube-prometheus-stack
         - appName: grafana-mimir
           namespace: grafana-mimir
         - appName: grafana-loki

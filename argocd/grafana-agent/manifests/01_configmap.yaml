@@ -27,8 +27,6 @@ data:
 
     prometheus.exporter.unix "server" { }
 
-    prometheus.exporter.cadvisor "container" {}
-
     discovery.kubernetes "nodes" {
       role = "node"
     }
@@ -46,22 +44,6 @@ data:
     prometheus.scrape "server" {
       targets    = prometheus.exporter.unix.server.targets
       forward_to = [prometheus.remote_write.default.receiver]
-    }
-
-    prometheus.scrape "kubelet" {
-      scheme = "https"
-      tls_config {
-          server_name = "kubernetes"
-          ca_file = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
-      }
-      bearer_token_file = "/var/run/secrets/kubernetes.io/serviceaccount/token"
-      targets = discovery.kubernetes.nodes.targets
-      forward_to = [prometheus.remote_write.default.receiver]
-    }
-
-    prometheus.scrape "cadvisor" {
-      targets    = prometheus.exporter.cadvisor.container.targets
-      forward_to = [ prometheus.remote_write.default.receiver ]
     }
 
     prometheus.operator.servicemonitors "servicemonitors" {
