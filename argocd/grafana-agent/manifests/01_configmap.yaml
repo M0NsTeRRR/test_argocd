@@ -39,6 +39,10 @@ data:
       forward_to = [prometheus.remote_write.default.receiver]
     }
 
+    prometheus.operator.podmonitors "podmonitors" {
+      forward_to = [prometheus.remote_write.default.receiver]
+    }
+
     // loki source
     loki.source.journal "read"  {
       forward_to    = [loki.write.local.receiver]
