@@ -21,6 +21,8 @@ loki:
       accessKeyId: ${AWS_ACCESS_KEY_ID}
       secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
       insecure: true
+  limits_config:
+    ingestion_rate_mb: 20
 
 monitoring:
   selfMonitoring:

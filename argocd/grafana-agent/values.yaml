@@ -1,6 +1,3 @@
-controller:
-  extraAnnotations:
-    reloader.stakater.com/auto: "true"
 agent:
   enableReporting: false
   mode: 'flow'
@@ -9,8 +6,8 @@ agent:
     name: grafana-agent-config
     key: config
   clustering:
-    enabled: false
+    enabled: true
 crds:
   create: false
 configReloader:
-  enabled: false
+  enabled: true
