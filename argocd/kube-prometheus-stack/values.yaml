@@ -44,8 +44,3 @@ prometheusOperator:
   enabled: false
 alertmanager:
   enabled: false
-
-
-Dashboard folder ?
-Deployment ?
-Servicemonitor manquant ?
