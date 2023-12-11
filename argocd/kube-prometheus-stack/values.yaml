@@ -37,7 +37,7 @@ grafana:
       annotations:
         grafana_dashboard_folder: "/tmp/dashboards/kubernetes"
 nodeExporter:
-  enabled: false
+  enabled: true
 prometheus:
   enabled: false
 prometheusOperator:

@@ -25,8 +25,6 @@ data:
     // discovery
     prometheus.exporter.agent "agent" {}
 
-    prometheus.exporter.unix "server" { }
-
     discovery.kubernetes "nodes" {
       role = "node"
     }
@@ -38,11 +36,6 @@ data:
     // prometheus scrape
     prometheus.scrape "agent" {
       targets    = prometheus.exporter.agent.agent.targets
-      forward_to = [prometheus.remote_write.default.receiver]
-    }
-
-    prometheus.scrape "server" {
-      targets    = prometheus.exporter.unix.server.targets
       forward_to = [prometheus.remote_write.default.receiver]
     }
 
