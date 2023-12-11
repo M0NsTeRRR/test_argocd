@@ -25,10 +25,6 @@ data:
     // discovery
     prometheus.exporter.agent "agent" {}
 
-    discovery.kubernetes "nodes" {
-      role = "node"
-    }
-
     discovery.kubernetes "pods" {
       role = "pod"
     }

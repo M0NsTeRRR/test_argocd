@@ -11,3 +11,5 @@ crds:
   create: false
 configReloader:
   enabled: true
+controller:
+  type: "deployment"
