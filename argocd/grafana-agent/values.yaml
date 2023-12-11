@@ -9,7 +9,7 @@ agent:
     name: grafana-agent-config
     key: config
   clustering:
-    enabled: true
+    enabled: false
 crds:
   create: false
 configReloader:
