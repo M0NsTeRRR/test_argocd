@@ -33,10 +33,6 @@ dashboards:
       gnetId: 17347
       revision: 7
       datasource: Prometheus
-    Cert-manager:
-      gnetId: 11001
-      revision: 1
-      datasource: Prometheus
     Argocd:
       gnetId: 14584
       revision: 1
@@ -59,6 +55,12 @@ dashboards:
       datasource: Prometheus
     External-secrets:
       url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
+    Keycloak:
+      gnetId: 14607
+      revision: 1
+      datasource: Prometheus
+    Cert-manager:
+      url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
 
 ingress:
   enabled: true
