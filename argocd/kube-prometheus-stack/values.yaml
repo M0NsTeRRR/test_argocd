@@ -34,8 +34,7 @@ grafana:
   forceDeployDashboards: true
   sidecar:
     dashboards:
-      annotations:
-        grafana_dashboard_folder: "/tmp/dashboards/kubernetes"
+      enabled: true
 nodeExporter:
   enabled: true
 prometheus:

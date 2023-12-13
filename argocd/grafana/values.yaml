@@ -20,12 +20,12 @@ dashboardProviders:
    providers:
    - name: 'default'
      orgId: 1
-     folder: 'default'
+     folder: ''
      type: file
      disableDeletion: true
      editable: true
      options:
-       path: /var/lib/grafana/dashboards/standard
+       path: /var/lib/grafana/dashboards
 
 dashboards:
   default:
@@ -33,6 +33,32 @@ dashboards:
       gnetId: 17347
       revision: 7
       datasource: Prometheus
+    Cert-manager:
+      gnetId: 11001
+      revision: 1
+      datasource: Prometheus
+    Argocd:
+      gnetId: 14584
+      revision: 1
+      datasource: Prometheus
+    External-dns:
+      gnetId: 15038
+      revision: 3
+      datasource: Prometheus
+    Ceph-cluster:
+      gnetId: 2842
+      revision: 17
+      datasource: Prometheus
+    Ceph-osd-single:
+      gnetId: 5336
+      revision: 9
+      datasource: Prometheus
+    Ceph-pools:
+      gnetId: 5342
+      revision: 9
+      datasource: Prometheus
+    External-secrets:
+      url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
 
 ingress:
   enabled: true
