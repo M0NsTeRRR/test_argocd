@@ -14,6 +14,9 @@ sidecar:
     enabled: true
     searchNamespace: ALL
 
+plugins:
+  - grafana-piechart-panel
+
 dashboardProviders:
   dashboardproviders.yaml:
    apiVersion: 1
@@ -53,12 +56,12 @@ dashboards:
       gnetId: 5342
       revision: 9
       datasource: Prometheus
+    Ceph-Vault:
+      gnetId: 12904
+      revision: 2
+      datasource: Prometheus
     External-secrets:
       url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
-    Keycloak:
-      gnetId: 14607
-      revision: 1
-      datasource: Prometheus
     Cert-manager:
       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
 
