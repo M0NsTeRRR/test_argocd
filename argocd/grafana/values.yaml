@@ -35,31 +35,31 @@ dashboards:
     Traefik:
       gnetId: 17347
       revision: 7
-      datasource: Prometheus
+      datasource: Mimir
     Argocd:
       gnetId: 14584
       revision: 1
-      datasource: Prometheus
+      datasource: Mimir
     External-dns:
       gnetId: 15038
       revision: 3
-      datasource: Prometheus
+      datasource: Mimir
     Ceph-cluster:
       gnetId: 2842
       revision: 17
-      datasource: Prometheus
+      datasource: Mimir
     Ceph-osd-single:
       gnetId: 5336
       revision: 9
-      datasource: Prometheus
+      datasource: Mimir
     Ceph-pools:
       gnetId: 5342
       revision: 9
-      datasource: Prometheus
+      datasource: Mimir
     Ceph-Vault:
       gnetId: 12904
       revision: 2
-      datasource: Prometheus
+      datasource: Mimir
     External-secrets:
       url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
     Cert-manager:
