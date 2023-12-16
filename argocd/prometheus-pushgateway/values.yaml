@@ -11,6 +11,6 @@ ingress:
     - host: pushgateway.unicornafk.fr
   className: "ingress-internal"
   tls:
-    - secretName: mimir.unicornafk.fr
+    - secretName: pushgateway.unicornafk.fr
       hosts:
-        - mimir.unicornafk.fr
+        - pushgateway.unicornafk.fr
