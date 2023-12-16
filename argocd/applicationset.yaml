@@ -6,6 +6,8 @@ spec:
   generators:
   - list:
       elements:
+        - appName: prometheus-pushgateway
+          namespace: prometheus-pushgateway
         - appName: kube-prometheus-stack
           namespace: kube-prometheus-stack
         - appName: grafana-mimir
