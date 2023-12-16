@@ -8,7 +8,7 @@ ingress:
     cert-manager.io/private-key-algorithm: "RSA"
     cert-manager.io/private-key-size: "4096"
   hosts:
-    - host: pushgateway.unicornafk.fr.
+    - pushgateway.unicornafk.fr
   className: "ingress-internal"
   tls:
     - secretName: pushgateway.unicornafk.fr
