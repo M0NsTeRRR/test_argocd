@@ -67,11 +67,15 @@ dashboards:
     Metallb:
       gnetId: 20162
       revision: 1
-      datasource: Mimir
+      datasource:
+        - name: DS_PROMETHEUS
+          value: Mimir
     K8up:
       gnetId: 20166
       revision: 1
-      datasource: Mimir
+      datasource:
+        - name: DS_PROMETHEUS
+          value: Mimir
 
 ingress:
   enabled: true
