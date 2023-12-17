@@ -25,8 +25,8 @@ dashboardProviders:
      orgId: 1
      folder: ''
      type: file
-     disableDeletion: true
-     editable: true
+     disableDeletion: false
+     allowUiUpdates: true
      options:
        path: /var/lib/grafana/dashboards
 
@@ -64,6 +64,18 @@ dashboards:
       url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
     Cert-manager:
       url: https://gitlab.com/uneeq-oss/cert-manager-mixin/-/raw/master/dashboards/cert-manager.json
+    Metallb:
+      gnetId: 20162
+      revision: 2
+      datasource:
+        - name: DS_PROMETHEUS
+          value: Prometheus
+    K8up:
+      gnetId: 20166
+      revision: 2
+      datasource:
+        - name: DS_PROMETHEUS
+          value: Prometheus
 
 ingress:
   enabled: true
