@@ -8,7 +8,7 @@ data:
   loki-datasource.yaml: |-
     apiVersion: 1
     datasources:
-    - name: Loki
+    - name: loki
       type: loki
       url: http://grafana-loki-loki-distributed-gateway.grafana-loki.svc.cluster.local
       access: proxy

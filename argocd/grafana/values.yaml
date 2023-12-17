@@ -35,31 +35,31 @@ dashboards:
     Traefik:
       gnetId: 17347
       revision: 7
-      datasource: Prometheus
+      datasource: prometheus
     Argocd:
       gnetId: 14584
       revision: 1
-      datasource: Prometheus
+      datasource: prometheus
     External-dns:
       gnetId: 15038
       revision: 3
-      datasource: Prometheus
+      datasource: prometheus
     Ceph-cluster:
       gnetId: 2842
       revision: 17
-      datasource: Prometheus
+      datasource: prometheus
     Ceph-osd-single:
       gnetId: 5336
       revision: 9
-      datasource: Prometheus
+      datasource: prometheus
     Ceph-pools:
       gnetId: 5342
       revision: 9
-      datasource: Prometheus
+      datasource: prometheus
     Ceph-Vault:
       gnetId: 12904
       revision: 2
-      datasource: Prometheus
+      datasource: prometheus
     External-secrets:
       url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
     Cert-manager:
@@ -69,13 +69,13 @@ dashboards:
       revision: 2
       datasource:
         - name: DS_PROMETHEUS
-          value: Prometheus
+          value: prometheus
     K8up:
       gnetId: 20166
       revision: 2
       datasource:
         - name: DS_PROMETHEUS
-          value: Prometheus
+          value: prometheus
 
 ingress:
   enabled: true
