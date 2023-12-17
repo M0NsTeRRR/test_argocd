@@ -65,6 +65,7 @@ data:
         separator     = "/"
         replacement   = "/var/log/pods/*$1/*.log"
       }
+    }
 
     // prometheus scrape
     prometheus.scrape "agent" {
