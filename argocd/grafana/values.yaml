@@ -68,6 +68,10 @@ dashboards:
       gnetId: 20162
       revision: 1
       datasource: Mimir
+    K8up:
+      gnetId: 20166
+      revision: 1
+      datasource: Mimir
 
 ingress:
   enabled: true
