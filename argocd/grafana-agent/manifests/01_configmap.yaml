@@ -83,14 +83,14 @@ data:
         enabled = true
       }
       scrape = {
-        default_scrape_timeout = "5s"
+        default_scrape_timeout = 5s
       }
     }
 
     prometheus.operator.podmonitors "podmonitors" {
       forward_to = [prometheus.remote_write.default.receiver]
       scrape = {
-        default_scrape_timeout = "5s"
+        default_scrape_timeout = 5s
       }
     }
 
