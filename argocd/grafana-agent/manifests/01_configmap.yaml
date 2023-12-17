@@ -74,6 +74,7 @@ data:
       clustering {
         enabled = true
       }
+      scrape_timeout = "5s"
     }
 
     prometheus.operator.servicemonitors "servicemonitors" {
@@ -81,10 +82,12 @@ data:
       clustering {
         enabled = true
       }
+      scrape_timeout = "5s"
     }
 
     prometheus.operator.podmonitors "podmonitors" {
       forward_to = [prometheus.remote_write.default.receiver]
+      scrape_timeout = "5s"
     }
 
     // loki source
