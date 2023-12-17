@@ -8,7 +8,7 @@ data:
   mimir-datasource.yaml: |-
     apiVersion: 1
     datasources:
-    - name: Pometheus
+    - name: Prometheus
       type: prometheus
       access: proxy
       url: http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/prometheus
