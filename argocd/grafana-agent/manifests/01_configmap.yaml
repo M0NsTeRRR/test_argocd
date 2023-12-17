@@ -93,7 +93,7 @@ data:
     }
 
     loki.source.kubernetes "pods" {
-      targets    = discovery.kubernetes.pods.targets
+      targets    = discovery.relabel.logs.output
       forward_to = [loki.write.local.receiver]
       clustering {
         enabled = true
