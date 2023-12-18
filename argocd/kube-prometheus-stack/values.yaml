@@ -43,9 +43,9 @@ kubeApiServer:
 kubeControllerManager:
   enabled: true
   endpoints:
-    - "master1.unicornafk.fr"
-    - "master2.unicornafk.fr"
-    - "master3.unicornafk.fr"
+    - "192.168.10.81"
+    - "192.168.10.82"
+    - "192.168.10.83"
   serviceMonitor:
     metricRelabelings:
       # Remove duplicate metrics
@@ -55,15 +55,15 @@ kubeControllerManager:
 kubeEtcd:
   enabled: true
   endpoints:
-    - "master1.unicornafk.fr"
-    - "master2.unicornafk.fr"
-    - "master3.unicornafk.fr"
+    - "192.168.10.81"
+    - "192.168.10.82"
+    - "192.168.10.83"
 kubeScheduler:
   enabled: true
   endpoints:
-    - "master1.unicornafk.fr"
-    - "master2.unicornafk.fr"
-    - "master3.unicornafk.fr"
+    - "192.168.10.81"
+    - "192.168.10.82"
+    - "192.168.10.83"
   serviceMonitor:
     metricRelabelings:
       # Remove duplicate metrics
