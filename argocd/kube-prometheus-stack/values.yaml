@@ -42,7 +42,10 @@ kubeApiServer:
         action: drop
 kubeControllerManager:
   enabled: true
-  endpoints: ["192.168.42.10", "192.168.42.11", "192.168.42.12"]
+  endpoints:
+    - "master1.unicornafk.fr"
+    - "master2.unicornafk.fr"
+    - "master3.unicornafk.fr"
   serviceMonitor:
     metricRelabelings:
       # Remove duplicate metrics
@@ -51,13 +54,16 @@ kubeControllerManager:
         action: keep
 kubeEtcd:
   enabled: true
-  endpoints: ["192.168.42.10", "192.168.42.11", "192.168.42.12"]
-kubeProxy:
-  enabled: false # Disabled because eBPF
-  endpoints: ["192.168.42.10", "192.168.42.11", "192.168.42.12"]
+  endpoints:
+    - "master1.unicornafk.fr"
+    - "master2.unicornafk.fr"
+    - "master3.unicornafk.fr"
 kubeScheduler:
   enabled: true
-  endpoints: ["192.168.42.10", "192.168.42.11", "192.168.42.12"]
+  endpoints:
+    - "master1.unicornafk.fr"
+    - "master2.unicornafk.fr"
+    - "master3.unicornafk.fr"
   serviceMonitor:
     metricRelabelings:
       # Remove duplicate metrics
