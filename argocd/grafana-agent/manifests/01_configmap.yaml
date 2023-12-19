@@ -13,9 +13,6 @@ data:
     prometheus.remote_write "default" {
       endpoint {
         url = "http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/api/v1/push"
-        metadata_config {
-          send_interval = "15s"
-        }
       }
     }
 
@@ -77,7 +74,8 @@ data:
       clustering {
         enabled = true
       }
-      scrape_timeout = "5s"
+      scrape_interval = "30s"
+      scrape_timeout  = "5s"
     }
 
     prometheus.operator.servicemonitors "servicemonitors" {
@@ -86,7 +84,8 @@ data:
         enabled = true
       }
       scrape {
-        default_scrape_timeout = "5s"
+        default_scrape_interval = "30s"
+        default_scrape_timeout  = "5s"
       }
     }
 
@@ -96,7 +95,8 @@ data:
         enabled = true
       }
       scrape {
-        default_scrape_timeout = "5s"
+        default_scrape_interval = "30s"
+        default_scrape_timeout  = "5s"
       }
     }
 
