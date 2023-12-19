@@ -13,6 +13,9 @@ data:
     prometheus.remote_write "default" {
       endpoint {
         url = "http://grafana-mimir-gateway.grafana-mimir.svc.cluster.local/api/v1/push"
+        metadata_config {
+          send_interval = "15s"
+        }
       }
     }
 
@@ -89,6 +92,9 @@ data:
 
     prometheus.operator.podmonitors "podmonitors" {
       forward_to = [prometheus.remote_write.default.receiver]
+      clustering {
+        enabled = true
+      }
       scrape {
         default_scrape_timeout = "5s"
       }
