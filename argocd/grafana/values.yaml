@@ -8,22 +8,6 @@ admin:
   userKey: ADMIN_USER
   passwordKey: ADMIN_PASSWORD
 
-grafana.ini:
-  paths:
-    data: /var/lib/grafana/
-    logs: /var/log/grafana
-    plugins: /var/lib/grafana/plugins
-    provisioning: /etc/grafana/provisioning
-  analytics:
-    check_for_updates: true
-  log:
-    mode: console
-  grafana_net:
-    url: https://grafana.net
-  server:
-    domain: "{{ if (and .Values.ingress.enabled .Values.ingress.hosts) }}{{ .Values.ingress.hosts | first }}{{ else }}''{{ end }}"
-    root_url: "https://%(domain)s/"
-
 sidecar:
   dashboards:
     enabled: true
@@ -31,6 +15,25 @@ sidecar:
   datasources:
     enabled: true
     searchNamespace: ALL
+
+alerting:
+  contactpoints.yaml:
+    apiVersion: 1
+    contactPoints:
+      - orgId: 1
+        name: unicornafk
+        receivers:
+          - uid: unicornafk
+            type: discord
+            secure_settings:
+              url: https://discord.com/api/webhooks/00000000000000000000/aaaaaaaaaaaaaaaaaaaaaa
+  policies.yaml:
+    apiVersion: 1
+    policies:
+      - orgId: 1
+        receiver: unicornafk
+        group_by:
+          - alertname
 
 plugins:
   - grafana-piechart-panel
