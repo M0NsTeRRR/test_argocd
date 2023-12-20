@@ -29,7 +29,7 @@ alerting:
         receivers:
           - uid: unicornafk
             type: discord
-            secure_settings:
+            settings:
               url: ${DISCORD_WEBHOOK_URL}
   policies.yaml:
     apiVersion: 1
