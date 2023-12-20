@@ -29,8 +29,8 @@ alerting:
         receivers:
           - uid: unicornafk
             type: discord
-            secure_settings:
-              url: https://discord.com/api/webhooks/00000000000000000000/aaaaaaaaaaaaaaaaaaaaaa
+            settings:
+              url: ${DISCORD_WEBHOOK_URL}
   policies.yaml:
     apiVersion: 1
     policies:
