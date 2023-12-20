@@ -28,6 +28,23 @@ ruler:
   enabled: true
   persistence:
     enabled: true
+  directories:
+    fake:
+      rules1.txt: |
+        groups:
+          - name: should_fire
+            rules:
+              - alert: HighPercentageError
+                expr: |
+                  sum(rate({app="loki"} |= "error" [5m])) by (job)
+                    /
+                  sum(rate({app="loki"}[5m])) by (job)
+                    > 0.05
+                for: 10m
+                labels:
+                  severity: warning
+                annotations:
+                  summary: High error rate
 
 monitoring:
   selfMonitoring:
