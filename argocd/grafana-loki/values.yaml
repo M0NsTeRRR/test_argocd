@@ -26,6 +26,8 @@ loki:
 
 ruler:
   enabled: true
+  persistence:
+    enabled: true
 
 monitoring:
   selfMonitoring:
