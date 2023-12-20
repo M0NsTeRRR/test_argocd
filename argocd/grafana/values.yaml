@@ -15,6 +15,9 @@ sidecar:
   datasources:
     enabled: true
     searchNamespace: ALL
+  alerts:
+    enabled: true
+    searchNamespace: ALL
 
 plugins:
   - grafana-piechart-panel
