@@ -30,7 +30,7 @@ alerting:
           - uid: unicornafk
             type: discord
             settings:
-              url: ${DISCORD_WEBHOOK_URL}
+              url: $DISCORD_WEBHOOK_URL
   policies.yaml:
     apiVersion: 1
     policies:
