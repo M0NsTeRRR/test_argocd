@@ -22,6 +22,11 @@ data:
       }
     }
 
+    // prometheus rules
+    mimir.rules.kubernetes "rules" {
+      address = "http://grafana-mimir-ruler.grafana-mimir.svc.cluster.local"
+    }
+
     // discovery
     prometheus.exporter.agent "agent" {}
 
