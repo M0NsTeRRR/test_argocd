@@ -32,25 +32,6 @@ sidecar:
     enabled: true
     searchNamespace: ALL
 
-alerting:
-  contactpoints.yaml:
-    apiVersion: 1
-    contactPoints:
-      - orgId: 1
-        name: unicornafk
-        receivers:
-          - uid: unicornafk
-            type: discord
-            secure_settings:
-              url: https://discord.com/api/webhooks/00000000000000000000/aaaaaaaaaaaaaaaaaaaaaa
-  policies.yaml:
-    apiVersion: 1
-    policies:
-      - orgId: 1
-        receiver: unicornafk
-        group_by:
-          - alertname
-
 plugins:
   - grafana-piechart-panel
 
