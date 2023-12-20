@@ -34,6 +34,9 @@ metaMonitoring:
     enabled: true
   serviceMonitor:
     enabled: true
+  prometheusRule:
+    enabled: false
+    mimirAlerts: false
 
 gateway:
   enabledNonEnterprise: true

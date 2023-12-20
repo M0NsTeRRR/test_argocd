@@ -32,6 +32,9 @@ monitoring:
 serviceMonitor:
   enabled: true
 
+prometheusRule:
+  enabled: true
+
 gateway:
   ingress:
     enabled: true
