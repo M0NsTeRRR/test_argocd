@@ -19,6 +19,11 @@ sidecar:
     enabled: true
     searchNamespace: ALL
 
+grafana.ini:
+  analytics:
+    check_for_updates: true
+  server:
+    root_url: "%(protocol)s://%(domain)s/"
 
 alerting:
   contactpoints.yaml:
