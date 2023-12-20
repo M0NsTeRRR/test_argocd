@@ -12,8 +12,7 @@ grafana.ini:
   analytics:
     check_for_updates: false
   server:
-    protocol: https
-    http_port: 443
+    root_url: "https://%(domain)s/"
 sidecar:
   dashboards:
     enabled: true
