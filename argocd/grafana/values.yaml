@@ -27,13 +27,6 @@ alerting:
             type: discord
             secure_settings:
               url: https://discord.com/api/webhooks/00000000000000000000/aaaaaaaaaaaaaaaaaaaaaa
-  policies.yaml:
-    apiVersion: 1
-    policies:
-      - orgId: 1
-        receiver: unicornafk
-        group_by:
-          - alertname
 
 plugins:
   - grafana-piechart-panel
