@@ -29,6 +29,18 @@ mimir:
       ruler_max_rules_per_rule_group: 0
       ruler_max_rule_groups_per_tenant: 0
 
+ingester:
+  persistentVolume:
+    size: 50Gi
+
+compactor:
+  persistentVolume:
+    size: 100Gi
+
+store_gateway:
+  persistentVolume:
+    size: 10Gi
+
 alertmanager:
   annotations:
     reloader.stakater.com/auto: "true"
