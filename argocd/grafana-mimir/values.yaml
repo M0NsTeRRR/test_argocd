@@ -26,6 +26,8 @@ mimir:
       storage_prefix: "ruler"
     limits:
       max_global_series_per_user: 0
+      ruler_max_rules_per_rule_group: 0
+      ruler_max_rule_groups_per_tenant: 0
 
 alertmanager:
   annotations:
