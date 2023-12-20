@@ -15,10 +15,15 @@ mimir:
           endpoint: ${BUCKET_HOST}
           secret_access_key: ${AWS_SECRET_ACCESS_KEY}
           insecure: true
+    blocks_storage:
+      backend: s3
+      storage_prefix: "blocks"
     alertmanager_storage:
       backend: s3
+      storage_prefix: "alertmanager"
     ruler_storage:
       backend: s3
+      storage_prefix: "ruler"
     limits:
       max_global_series_per_user: 0
 
