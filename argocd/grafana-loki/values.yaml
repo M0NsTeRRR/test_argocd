@@ -24,6 +24,9 @@ loki:
   limits_config:
     ingestion_rate_mb: 20
 
+ruler:
+  enabled: true
+
 monitoring:
   selfMonitoring:
     grafanaAgent:
