@@ -31,11 +31,11 @@ mimir:
 
 ingester:
   persistentVolume:
-    size: 50Gi
+    size: 40Gi
 
 compactor:
   persistentVolume:
-    size: 100Gi
+    size: 40Gi
 
 store_gateway:
   persistentVolume:
