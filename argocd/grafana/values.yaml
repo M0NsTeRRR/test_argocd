@@ -1,3 +1,5 @@
+envFromSecret: "grafana-vault"
+
 annotations:
   reloader.stakater.com/auto: "true"
 
@@ -6,6 +8,12 @@ admin:
   userKey: ADMIN_USER
   passwordKey: ADMIN_PASSWORD
 
+grafana.ini:
+  analytics:
+    check_for_updates: false
+  server:
+    protocol: https
+    http_port: 443
 sidecar:
   dashboards:
     enabled: true
@@ -13,6 +21,25 @@ sidecar:
   datasources:
     enabled: true
     searchNamespace: ALL
+
+alerting:
+  contactpoints.yaml:
+    apiVersion: 1
+    contactPoints:
+      - orgId: 1
+        name: unicornafk
+        receivers:
+          - uid: unicornafk
+            type: discord
+            secure_settings:
+              url: ${DISCORD_WEBHOOK_URL}
+  policies.yaml:
+    apiVersion: 1
+    policies:
+      - orgId: 1
+        receiver: unicornafk
+        group_by:
+          - alertname
 
 plugins:
   - grafana-piechart-panel
