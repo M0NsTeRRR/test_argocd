@@ -17,7 +17,7 @@ sidecar:
     searchNamespace: ALL
 
 alerting:
-  contactpoints.yaml:
+  grafana-alerting.yaml:
     apiVersion: 1
     contactPoints:
       - orgId: 1
@@ -27,6 +27,11 @@ alerting:
             type: discord
             secure_settings:
               url: https://discord.com/api/webhooks/00000000000000000000/aaaaaaaaaaaaaaaaaaaaaa
+    policies:
+      - orgId: 1
+        receiver: unicornafk
+        group_by:
+          - alertname
 
 plugins:
   - grafana-piechart-panel
