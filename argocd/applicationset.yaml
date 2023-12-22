@@ -5,19 +5,7 @@ metadata:
 spec:
   generators:
   - list:
-      elements:
-        - appName: prometheus-pushgateway
-          namespace: prometheus-pushgateway
-        - appName: kube-prometheus-stack
-          namespace: kube-prometheus-stack
-        - appName: grafana-mimir
-          namespace: grafana-mimir
-        - appName: grafana-loki
-          namespace: grafana-loki
-        - appName: grafana-agent
-          namespace: grafana-agent
-        - appName: grafana
-          namespace: grafana
+      elements: []
   template:
     metadata:
       name: '{{appName}}'
